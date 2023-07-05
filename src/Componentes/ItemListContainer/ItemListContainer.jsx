@@ -11,7 +11,7 @@ const ItemListContainer = (props) => {
     useEffect(() =>{
         getProductos()
         .then(respuesta => setProductos(respuesta))
-        //.catch(error => console.log(error))
+        
     
     
     })
