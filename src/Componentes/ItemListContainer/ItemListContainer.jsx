@@ -1,20 +1,24 @@
 import { useState, useEffect} from "react";
-import { getProductos } from "../../asyncmoc";
+import { getProductos, getProductosPorCategoria } from "../../asyncmoc";
 import React, {PureComponent} from "react";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = (props) => {
     const [productos, setProductos] = useState([]);
 
+    const {idCategoria} = useParams();
 
-    useEffect(() =>{
-        getProductos()
-        .then(respuesta => setProductos(respuesta))
-        
-    
-    
-    })
+    useEffect (() => {
+        const funcion = idCategoria ? getProductosPorCategoria : getProductos;
+
+        funcion(idCategoria)
+        .then(res => setProductos(res))
+
+    },  [idCategoria])
+
+
     return (
         <>
 
@@ -23,5 +27,5 @@ const ItemListContainer = (props) => {
         </>
     )
 }
-77
+
 export default ItemListContainer

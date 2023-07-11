@@ -1,5 +1,6 @@
 
 import "./Navbar.css"
+import { Link, NavLink } from "react-router-dom"
 
 import CartWidget from "../CartWidget/CartWidget"
 
@@ -9,16 +10,21 @@ import CartWidget from "../CartWidget/CartWidget"
 const NavBar = () => {
     return (
 
-    
+
 
         <header>
-            <h1>Q´ Dulce </h1>
+            <Link to="/">
+                Q´ Dulce </Link>
 
             <nav>
                 <ul>
-                    <li>Marquesa de Chocolate </li>
-                    <li>Marquesa de Dulce de Leche </li>
-                    <li>Marquesa de Limon </li>
+                    <li>
+                        <NavLink to="/categoria/2"> Tortas  </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/categoria/3"> Helados </NavLink>
+                    </li>
 
 
                 </ul>
@@ -28,17 +34,6 @@ const NavBar = () => {
             <CartWidget> </CartWidget>
         </header>
 
-        //     <Navbar bg="info" variant="light">
-        //         <Container>
-        //             <Navbar.Brand href="#home">Q`Dulces</Navbar.Brand>
-        //             <Nav className="me-auto">
-        //                 <Nav.Link href="#home">Marquesa de chocolate</Nav.Link>
-        //                 <Nav.Link href="#features">Marquesa de Dulce de Leche </Nav.Link>
-        //                 <Nav.Link href="#pricing">Marquesa de Limon </Nav.Link>
-        //             </Nav>
-        //             <CartWidget>  </CartWidget>
-        //         </Container>
-        //     </Navbar>
 
 
     )
