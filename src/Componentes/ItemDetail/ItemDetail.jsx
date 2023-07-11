@@ -1,8 +1,6 @@
-import "./ItemDetail.css"
-
 import React from 'react';
-
-
+import { Link } from 'react-router-dom';
+import "./ItemDetail.css";
 
 const ItemDetail = ({ id, nombre, precio, img }) => {
     return (
@@ -15,6 +13,7 @@ const ItemDetail = ({ id, nombre, precio, img }) => {
                 natus vitae sint ullam, incidunt cupiditate molestiae corporis impedit est nesciunt aliquam at laboriosam rerum?
             </p>
             <img src={img} alt={nombre} />
+            <Link to={`/Item/${id}`} className='Option'>Ir a la ruta</Link>
         </div>
     );
 };
