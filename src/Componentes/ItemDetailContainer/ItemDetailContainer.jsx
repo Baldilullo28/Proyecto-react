@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getUnProducto } from "../../asyncmoc";
-import { ItemDetail } from "../ItemDetail/ItemDetail" 
+import ItemDetail  from "../ItemDetail/ItemDetail" 
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
